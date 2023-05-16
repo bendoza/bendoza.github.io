@@ -101,12 +101,11 @@ body {
 }
   
 .details .left {
-  width: 60%;    
+  width: 65%;    
 }
   
 .details .right {
-  tex-align: right;
-  width: 39%;    
+  width: 34%;    
 }
   
 .details .name {
