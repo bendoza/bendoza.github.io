@@ -589,24 +589,9 @@ video {
   border-bottom-width: 20px;
 }
 
-.pe-4 {
-  -webkit-padding-end: 1rem;
-          padding-inline-end: 1rem;
-}
-
-.ps-4 {
-  -webkit-padding-start: 1rem;
-          padding-inline-start: 1rem;
-}
-
-.pe-8 {
-  -webkit-padding-end: 2rem;
-          padding-inline-end: 2rem;
-}
-
-.ps-8 {
-  -webkit-padding-start: 2rem;
-          padding-inline-start: 2rem;
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .pe-6 {
@@ -617,6 +602,16 @@ video {
 .ps-6 {
   -webkit-padding-start: 1.5rem;
           padding-inline-start: 1.5rem;
+}
+
+.pe-4 {
+  -webkit-padding-end: 1rem;
+          padding-inline-end: 1rem;
+}
+
+.ps-4 {
+  -webkit-padding-start: 1rem;
+          padding-inline-start: 1rem;
 }
 
 .text-center {
