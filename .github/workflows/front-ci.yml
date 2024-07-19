@@ -31,7 +31,7 @@ jobs:
         working-directory: ./resume/
 
       - name: Copy CNAME
-        run: cp CNAME ./
+        run: cp CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
