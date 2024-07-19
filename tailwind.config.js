@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-        './index.html'
-    ],
+    content: ["./src/**/*.{html,js}"],
     theme: {
         borderWidth: {
             DEFAULT: '1px',
@@ -17,6 +15,9 @@ module.exports = {
             fontFamily: {
                 custom: ['Rubik', 'sans-serif'],
             },
+            textShadow: {
+                'default': '12px 12px 12px rgba(0, 0, 0, 0.25)',
+              },
         },
     },
     plugins: [],
