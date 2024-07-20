@@ -13,7 +13,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/resume",
+            "outputPath": {
+              "base": "docs",
+              "browser": "",
+              "server": "",
+              "media": "public"
+            },
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
