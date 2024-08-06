@@ -10,6 +10,10 @@ module.exports = {
             '4': '4px',
             '20': '20px',
             '350': '350px',
+            '44': '44px',
+            '100': '100px',
+            '48': '48px',
+
         },
         extend: {
             fontFamily: {
