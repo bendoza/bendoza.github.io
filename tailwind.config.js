@@ -22,6 +22,9 @@ module.exports = {
             textShadow: {
                 'default': '12px 12px 12px rgba(0, 0, 0, 0.25)',
               },
+            spacing: {
+                '1/10': '10%',
+            }
         },
     },
     plugins: [],
