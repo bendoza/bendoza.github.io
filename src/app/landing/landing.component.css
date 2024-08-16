@@ -142,13 +142,153 @@ h1, main {
     }
 }
 
-/* Pulsate on hover */
-.pulsate-hover:hover {
-    animation: pulsate 3s infinite ease-in-out;
+@keyframes fade-down {
+  0% {
+      opacity: 0;
+      filter: blur(3px);
+      transform: translateY(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px) scale(1);
+  }
 }
 
-/* Smooth transition back to full opacity when unhovered */
-.pulsate-hover {
-    transition: opacity 1.5s ease-in-out; /* Match this with the pulsate duration */
-    opacity: 1.00;
+@keyframes fade-up {
+  0% {
+      opacity: 0;
+      filter: blur(3px);
+      transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0px) scale(1);
+  }
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+.positioned-scrollable-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+.positioned-scrollable-container {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* General styles to allow scrolling */
+.positioned-scrollable-container {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  overflow: -moz-scrollbars-none; /* Older Firefox versions */
+}
+
+.welcome-text-1 {
+  animation: fade-down 0.8s;
+}
+
+.welcome-text-2 {
+  animation: fade-up 1.2s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+.before-animation {
+  opacity: 0;
+  transform: translateY(30px) scale(0.9); /* Adjust this for the second element */
+}
+
+.scrollable-container::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar for a cleaner look */
+}
+
+.scrollable-container {
+  height: 50vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.scroll-section {
+  height: 50vh;
+  scroll-snap-align: start;
+}
+
+.overlayy {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: screen;
+  background-color: #2e2e2e;
+}
+
+.img-blocks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  mix-blend-mode: hard-light;
+  background: #7b7b7b;
+  transition: opacity 0.3s ease-in;
+}
+
+.block.active {
+  opacity: 0.75;
+}
+
+.textt:hover .letter, .textt.play .letter {
+  transform: translateY(-100%);
+}
+
+.textt .blockk:last-child {
+  color: #2e2e2e;
+}
+
+.textt .letter {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.76, 0, 0.024, 1);
+}
+
+.letter:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.letter:nth-child(2) {
+  transition-delay: 0.03ms;
+}
+
+.letter:nth-child(3) {
+  transition-delay: 0.06ms;
+}
+
+.letter:nth-child(4) {
+  transition-delay: 0.09ms;
+}
+
+.letter:nth-child(5) {
+  transition-delay: 0.12ms;
+}
+
+.letter:nth-child(6) {
+  transition-delay: 0.15ms;
+}
+
+.letter:nth-child(7) {
+  transition-delay: 0.18ms;
+}
+
+.letter:nth-child(8) {
+  transition-delay: 0.21ms;
+}
+
+.letter:nth-child(9) {
+  transition-delay: 0.24ms;
 }
