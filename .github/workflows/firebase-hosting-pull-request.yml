@@ -24,4 +24,4 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PERSONAL_772CB }}
           projectId: personal-772cb
-          target: live  # Deploy to the live environment (production)
+          target: live  # This targets the production site (live)
