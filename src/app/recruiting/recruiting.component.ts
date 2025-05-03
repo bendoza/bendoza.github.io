@@ -1,36 +1,54 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-recruiting',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './recruiting.component.html',
   styleUrl: './recruiting.component.css'
 })
-export class RecruitingComponent implements AfterViewInit, OnDestroy {
-  private lastScroll = 0;
-  private scrollHandler = () => this.handleScroll();
+export class RecruitingComponent {
 
-  ngAfterViewInit(): void {
-    window.addEventListener('scroll', this.scrollHandler);
-  }
+  url = 'https://eo3evkqk9dq52le.m.pipedream.net';
 
-  ngOnDestroy(): void {
-    window.removeEventListener('scroll', this.scrollHandler);
-  }
+  formData = {
+    name: '',
+    phone: '',
+    zip: '',
+    message: ''
+  };
 
-  handleScroll(): void {
-    const header = document.getElementById('header');
-    if (!header) return;
-
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > this.lastScroll && currentScroll > 50) {
-      header.classList.add('-translate-y-full');
-    } else {
-      header.classList.remove('-translate-y-full');
+  submitForm(form: any) {
+    const errors: string[] = [];
+  
+    if (!this.formData.name.trim()) {
+      errors.push('Name is required.');
     }
-
-    this.lastScroll = currentScroll;
-  }
+  
+    if (!this.formData.phone.trim()) {
+      errors.push('Phone number is required.');
+    }
+  
+    if (!this.formData.zip.trim()) {
+      errors.push('Zip code is required.');
+    } else if (!/^\d{5}$/.test(this.formData.zip)) {
+      errors.push('Zip code must be 5 digits.');
+    }
+  
+    if (!this.formData.message.trim()) {
+      errors.push('Message is required.');
+    }
+  
+    if (errors.length > 0) {
+      alert('Please fix the following:\n\n' + errors.join('\n'));
+      return;
+    }
+  
+    const { name, phone, zip, message } = this.formData;
+    alert(
+      `Submitted Info:\nName: ${name}\nPhone: ${phone}\nZip: ${zip}\nMessage: ${message}`
+    );
+  }   
 }

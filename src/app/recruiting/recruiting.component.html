@@ -46,25 +46,25 @@
     <div class="text-5xl font-lemon text-black text-center pt-24">
         Get in Touch
     </div>
-    <form class="max-w-md mx-auto mt-8 px-12 flex flex-col gap-8 text-left text-black">
+    <form class="max-w-md mx-auto mt-8 px-12 flex flex-col gap-8 text-left text-black" #contactForm="ngForm" (ngSubmit)="submitForm(contactForm)">
         <div>
           <h3 class="text-base font-sfmono_m font-bold mb-2">Name</h3>
-          <input type="text" class="border border-gray-400 px-4 py-2 rounded w-full" />
+          <input name="name" [(ngModel)]="formData.name" type="text" required class="border border-gray-400 px-4 py-2 rounded w-full" />
         </div>
       
         <div>
           <h3 class="text-base font-sfmono_m font-bold mb-2">Phone Number</h3>
-          <input type="tel" class="border border-gray-400 px-4 py-2 rounded w-full" />
+          <input name="phone" [(ngModel)]="formData.phone" type="tel" required class="border border-gray-400 px-4 py-2 rounded w-full" />
         </div>
 
         <div>
             <h3 class="text-base font-sfmono_m font-bold mb-2">Zip Code</h3>
-            <input type="text" inputmode="numeric" pattern="[0-9]*" class="border border-gray-400 px-4 py-2 rounded w-full" />
+            <input name="zip" [(ngModel)]="formData.zip" type="text" required inputmode="numeric" pattern="[0-9]*" class="border border-gray-400 px-4 py-2 rounded w-full" />
           </div>
       
         <div>
           <h3 class="text-base font-sfmono_m font-bold mb-2">Message</h3>
-          <textarea rows="4" class="border border-gray-400 px-4 py-2 rounded resize-none w-full"></textarea>
+          <textarea name="message" [(ngModel)]="formData.message" required rows="4" class="border border-gray-400 px-4 py-2 rounded resize-none w-full"></textarea>
         </div>
       
         <div class="mb-12 flex justify-center text-center items-center">
