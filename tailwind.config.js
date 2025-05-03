@@ -18,6 +18,13 @@ module.exports = {
         extend: {
             fontFamily: {
                 custom: ['Rubik', 'sans-serif'],
+                sfmono_r: ['SFMono-Regular', 'sans-serif'],
+                sfmono_m: ['SFMono-Medium', 'sans-serif'],
+                sfmono_l: ['SFMono-Light', 'sans-serif'],
+                cocogoose: ['Cocogoose', 'sans-serif'],
+                built: ['built', 'sans-serif'],
+                lemon: ['lemon', 'sans-serif'],
+                geo: ['geo', 'sans-serif'],
             },
             textShadow: {
                 'default': '12px 12px 12px rgba(0, 0, 0, 0.25)',
